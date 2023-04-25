@@ -1,3 +1,4 @@
+
 package Metodos;
 
 import funciones.ModeloBiseccion;
@@ -6,24 +7,21 @@ import org.nfunk.jep.JEP;
 
 /**
  *
- * @author EdgarRodas
+ * @author eroda
  */
 public class FormBiseccion extends javax.swing.JInternalFrame {
-
     //INSTANCIO LAS CLASES NECESARIAS PARA PODER MANIPULAR EL FUNCIONAMIENTO DE MI PROGRAMA
     ModeloBiseccion Mb = new ModeloBiseccion();
     DefaultTableModel modelo = new DefaultTableModel();
 
     //CON ESTE PARSEADOR, ME SIRVE PARA SUSTITUIR LOS VALORES EN MI FUNCION
     JEP jep = new JEP();
-
     /**
-     * Creates new form FormBiseccion
+     * Creates new form FormBiseccion1
      */
     public FormBiseccion() {
         initComponents();
     }
-
     //DECLARO LAS VARIABLES NECESARIAS PARA MANIPULAR EL VALOR DE MIS DATOS
     private double r = 0.0;
     int iterador = 1;
@@ -102,12 +100,11 @@ public class FormBiseccion extends javax.swing.JInternalFrame {
         Mb.setETolerancia(Et);
         Mb.setFuncion(funcion);
     }
-
+    
     //METODO QUE ENVIA LA RESPUESTA DONDE SE CONTIENE LA SOLUCION DE LA RAIZ
     public void Respuesta() {
         txtResultado.setText(String.format("%.4f", Xr));
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -137,7 +134,6 @@ public class FormBiseccion extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle("METODO DE BISECCION");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
@@ -278,7 +274,7 @@ public class FormBiseccion extends javax.swing.JInternalFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,18 +285,27 @@ public class FormBiseccion extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 330));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //BOTON DONDE REALIZA LA ACCION DE VISUALIZAR EL PROCEDIMIENTO DEL PROGRAMA
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
         EnvioDatos();
         Evaluar();
         Respuesta();
     }//GEN-LAST:event_btnEvaluarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaBiseccion;

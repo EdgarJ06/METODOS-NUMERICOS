@@ -6,6 +6,9 @@ package Vista;
 
 import Metodos.FormReglaFalsa;
 import Metodos.FormBiseccion;
+import Metodos.FormInterpolacionLagrange;
+import Metodos.FormInterpolacionNewton;
+import Metodos.FormMuller;
 import Metodos.FormNewton;
 import Metodos.FormRaicesMultiples;
 import Metodos.FormSecante;
@@ -44,11 +47,14 @@ public class Principal extends javax.swing.JFrame {
         SubMenuNewton = new javax.swing.JMenuItem();
         SubMenuSecante = new javax.swing.JMenuItem();
         SubMenuRaicesMultiples = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        SubMenuInterpolacionLagrange = new javax.swing.JMenuItem();
+        SubMenuInterpolacionNewton = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         SubMenuBiseccion = new javax.swing.JMenuItem();
         SubMenuReglaFalsa = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        SubMenuMuller = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
 
         setTitle("PRINCIPAL METODOS NUMERICOS");
@@ -112,6 +118,26 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu2.add(SubMenuRaicesMultiples);
 
+        jMenu5.setText("Interpolacion");
+
+        SubMenuInterpolacionLagrange.setText("Interpolación Lagrange");
+        SubMenuInterpolacionLagrange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubMenuInterpolacionLagrangeActionPerformed(evt);
+            }
+        });
+        jMenu5.add(SubMenuInterpolacionLagrange);
+
+        SubMenuInterpolacionNewton.setText("Interpolación Newton");
+        SubMenuInterpolacionNewton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubMenuInterpolacionNewtonActionPerformed(evt);
+            }
+        });
+        jMenu5.add(SubMenuInterpolacionNewton);
+
+        jMenu2.add(jMenu5);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Metodo Cerrado");
@@ -136,8 +162,13 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu4.setText("Raices de Polinomios");
 
-        jMenuItem6.setText("Muller");
-        jMenu4.add(jMenuItem6);
+        SubMenuMuller.setText("Muller");
+        SubMenuMuller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubMenuMullerActionPerformed(evt);
+            }
+        });
+        jMenu4.add(SubMenuMuller);
 
         jMenuItem7.setText("Bairstow");
         jMenu4.add(jMenuItem7);
@@ -182,6 +213,21 @@ public class Principal extends javax.swing.JFrame {
        InfoPrograma infoPrograma = new InfoPrograma();
         CentrarForm(infoPrograma);
     }//GEN-LAST:event_SubMenuInformacionActionPerformed
+
+    private void SubMenuMullerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubMenuMullerActionPerformed
+        FormMuller formMuller = new FormMuller();
+        CentrarForm(formMuller);
+    }//GEN-LAST:event_SubMenuMullerActionPerformed
+
+    private void SubMenuInterpolacionNewtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubMenuInterpolacionNewtonActionPerformed
+        FormInterpolacionNewton formInterpolacionNewton = new FormInterpolacionNewton();
+        CentrarForm(formInterpolacionNewton);
+    }//GEN-LAST:event_SubMenuInterpolacionNewtonActionPerformed
+
+    private void SubMenuInterpolacionLagrangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubMenuInterpolacionLagrangeActionPerformed
+        FormInterpolacionLagrange formLagrange = new FormInterpolacionLagrange();
+        CentrarForm(formLagrange);
+    }//GEN-LAST:event_SubMenuInterpolacionLagrangeActionPerformed
 
     public void CentrarForm(JInternalFrame frame){
         VentanaHome.add(frame);
@@ -228,6 +274,9 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem SubMenuBiseccion;
     private javax.swing.JMenuItem SubMenuInformacion;
+    private javax.swing.JMenuItem SubMenuInterpolacionLagrange;
+    private javax.swing.JMenuItem SubMenuInterpolacionNewton;
+    private javax.swing.JMenuItem SubMenuMuller;
     private javax.swing.JMenuItem SubMenuNewton;
     private javax.swing.JMenuItem SubMenuRaicesMultiples;
     private javax.swing.JMenuItem SubMenuReglaFalsa;
@@ -238,8 +287,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }

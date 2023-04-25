@@ -78,11 +78,8 @@ public class FormSecante extends javax.swing.JInternalFrame {
 
             XiR = Xi - ((funXi) * (Xo - Xi) / (funXo - funXi));
 
-            if (iterador == 1) {
-
-            } else {
-                ETolerancia = (Math.abs(Xi - XiR));
-            }
+            if (iterador > 1) ETolerancia = (Math.abs(Xi - XiR));
+                
 
             modelo = (DefaultTableModel) TablaSecante.getModel();
             Object[] ob = new Object[7];
