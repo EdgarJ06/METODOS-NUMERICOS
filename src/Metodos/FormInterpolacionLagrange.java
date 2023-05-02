@@ -30,6 +30,16 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
         txtResultado.setText(Double.toString(resultado));
     }
 
+    //METODO PARA LIMPIAR TODAS LAS CAJAS Y LA TABLA 
+    public void Limpiar(){
+        txtX.setText(null);
+        txtX0.setText(null);
+        txtX1.setText(null);
+        txtY0.setText(null); 
+        txtY1.setText(null);
+        txtResultado.setText(null);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +64,7 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         txtX = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtResultado = new javax.swing.JTextField();
 
@@ -139,6 +150,13 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
             }
         });
 
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Basurero.png"))); // NOI18N
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -148,9 +166,11 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
+                .addGap(18, 18, 18)
+                .addComponent(btnLimpiar)
+                .addGap(3, 3, 3))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,6 +181,9 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
                     .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnLimpiar))
         );
 
         jLabel6.setText("RESULTADO :");
@@ -220,9 +243,14 @@ public class FormInterpolacionLagrange extends javax.swing.JInternalFrame {
         Evaluar();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        Limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
